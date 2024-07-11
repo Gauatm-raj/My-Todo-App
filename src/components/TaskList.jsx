@@ -6,14 +6,17 @@ const TaskList = () => {
   const tasks = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
+  // make a state for edit and update the task
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [updatedTask, setUpdatedTask] = useState('');
 
+  //this function edit task after edit button clicked
   const handleEdit = (task) => {
     setEditingTaskId(task.id);
     setUpdatedTask(task.text);
   };
 
+  // this function save the edited task to state
   const handleSaveEdit = (id) => {
     dispatch(editTask(id, updatedTask));
     setEditingTaskId(null);

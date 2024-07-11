@@ -4,11 +4,12 @@ const initialState = {
   tasks: [],
 };
 
+// here we check all cases in taskReducer function
 const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
       return {
-        ...state,
+        ...state, //spreading the state and add tasks to it
         tasks: [...state.tasks, { id: Date.now(), text: action.payload }],
       };
     case DELETE_TASK:

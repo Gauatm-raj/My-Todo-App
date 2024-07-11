@@ -6,6 +6,7 @@ const TaskInput = () => {
   const [task, setTask] = useState('');
   const dispatch = useDispatch();
 
+  //we make a function to add task when button clicked
   const handleAddTask = () => {
     if (task.trim()) {
       dispatch(addTask(task));
